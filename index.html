@@ -1176,7 +1176,7 @@ async function sendTelegramApproveNotification(approver, ticketId, machineName, 
 
             const filtered = tickets.filter(t => {
                 const matchStatus = (statusFilter === "ทั้งหมด" || t.status === statusFilter);
-                const matchSearch = (t.ticket_id.toLowerCase().includes(searchTerm) || t.machine_name.toLowerCase().includes(searchTerm) || t.technician.toLowerCase().includes(searchTerm) || t.details.toLowerCase().includes(searchTerm));
+                const matchSearch = (t.ticket_id.toLowerCase().includes(searchTerm) || t.machine_name.toLowerCase().includes(searchTerm) || t.technician.toLowerCase().includes(searchTerm.toLowerCase) || t.details.toLowerCase().includes(searchTerm));
                 
                 // ปรับปรุง: การตรวจสอบเงื่อนไข วันที่รายวัน หรือ ช่วงวันที่
                 let matchDate = true;
